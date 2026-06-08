@@ -29,6 +29,7 @@ If any is missing, skip it.
 - [0005](./0005-license-mit.md) — license: MIT for our code; vendored Lucide SVGs keep ISC + Feather-MIT
 - [0006](./0006-package-naming.md) — package naming and namespace (`fuzzyfox/lucide-for-laravel`, `FuzzyFox\Lucide`)
 - [0007](./0007-generator-is-a-framework-free-cli.md) — the generator is a framework-free `symfony/console` CLI, not an Artisan command
+- [0008](./0008-svg-attribute-normalisation.md) — SVG attribute normalisation: strip `class`/`width`/`height`/comment, keep `viewBox`/`stroke*`
 
 Still open for future records: the rest of the sync/CI pipeline shape (generated-artifact layout,
 SVG attribute handling, the `--check` gate, the daily age-gated `pnpm update` → single rolling PR
