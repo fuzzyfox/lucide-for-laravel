@@ -20,6 +20,10 @@ All three must be true:
 
 If any is missing, skip it.
 
-> Empty for now — no decisions recorded yet. The first ADR lands during the design grilling
-> session when the first architecturally significant choice is made (e.g. enum case-naming
-> rule, the upstream sourcing strategy, or keeping the Filament layer optional).
+## Records
+
+- [0001](./0001-lucide-enum-is-a-plain-backed-enum.md) — Lucide enum is a plain backed enum, not a `ScalableIcon`
+- [0002](./0002-single-package-auto-discovered-filament-overlay.md) — single package; Filament overlay is an auto-discovered, self-guarding provider
+
+Still open for future records: the upstream sourcing strategy (git tag vs. npm tarball) and
+the enum case-naming rule.
