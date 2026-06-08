@@ -71,9 +71,10 @@ The operation that reads the **source of truth** at the **pinned version** and r
 _Avoid_: build, fetch, import, update.
 
 **Generated artifact**:
-A file emitted by a **sync** and committed to the repo: the SVG **icon set**, the **Lucide enum**,
-and the blade-icons registration. Treated as read-only output, regenerated wholesale, never patched
-by hand.
+A file emitted by a **sync** and committed to the repo: the SVG **icon set**, its verbatim upstream
+`LICENSE` notice, and the **Lucide enum**. Treated as read-only output, regenerated wholesale, never
+patched by hand. The blade-icons set registration is **not** a generated artifact — it is static
+service-provider code that points blade-icons at the **icon set** directory.
 _Avoid_: build output, vendored file, asset.
 
 ## Flagged ambiguities
