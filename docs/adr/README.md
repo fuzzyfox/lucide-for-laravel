@@ -26,6 +26,8 @@ If any is missing, skip it.
 - [0002](./0002-single-package-auto-discovered-filament-overlay.md) — single package; Filament overlay is an auto-discovered, self-guarding provider
 - [0003](./0003-lucide-static-is-the-single-source-of-truth.md) — `lucide-static` is the single source of truth; alias/deprecation metadata out of scope
 - [0004](./0004-enum-case-naming-rule.md) — enum case-naming rule: PascalCase + whole-number digit-to-words, with a sync-time injectivity assertion
+- [0005](./0005-license-mit.md) — license: MIT for our code; vendored Lucide SVGs keep ISC + Feather-MIT
+- [0006](./0006-package-naming.md) — package naming and namespace (`fuzzyfox/lucide-for-laravel`, `FuzzyFox\Lucide`)
 
 Still open for future records: the sync/CI pipeline shape (daily age-gated `pnpm update` →
-regenerate → single rolling PR).
+regenerate → single rolling PR) — deferred to a dedicated grilling session.
