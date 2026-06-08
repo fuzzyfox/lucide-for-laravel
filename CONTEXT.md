@@ -32,6 +32,12 @@ does **not** implement Filament's `ScalableIcon` — passed directly anywhere Fi
 icon, which resolves it via `->value`.
 _Avoid_: icon enum, icon constants, ScalableIcon enum.
 
+**Case name**:
+The PascalCase identifier of a glyph's case in the **Lucide enum** (`AlarmClockPlus` for
+`alarm-clock-plus`), produced by the deterministic case-naming rule: PascalCase each segment and
+render digit runs as whole-number words (`clock-12 → ClockTwelve`). See ADR-0004.
+_Avoid_: case label, enum key.
+
 **Alias override**:
 A mapping from one of Filament's built-in chrome icon slots (`PanelsIconAlias::*` — the global
 search field, sidebar toggles, notification bell, …) to a Lucide **icon set** name. The only
