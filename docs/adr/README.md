@@ -28,6 +28,8 @@ If any is missing, skip it.
 - [0004](./0004-enum-case-naming-rule.md) — enum case-naming rule: PascalCase + whole-number digit-to-words, with a sync-time injectivity assertion
 - [0005](./0005-license-mit.md) — license: MIT for our code; vendored Lucide SVGs keep ISC + Feather-MIT
 - [0006](./0006-package-naming.md) — package naming and namespace (`fuzzyfox/lucide-for-laravel`, `FuzzyFox\Lucide`)
+- [0007](./0007-generator-is-a-framework-free-cli.md) — the generator is a framework-free `symfony/console` CLI, not an Artisan command
 
-Still open for future records: the sync/CI pipeline shape (daily age-gated `pnpm update` →
-regenerate → single rolling PR) — deferred to a dedicated grilling session.
+Still open for future records: the rest of the sync/CI pipeline shape (generated-artifact layout,
+SVG attribute handling, the `--check` gate, the daily age-gated `pnpm update` → single rolling PR
+Action) — being worked through in the dedicated grilling session.
