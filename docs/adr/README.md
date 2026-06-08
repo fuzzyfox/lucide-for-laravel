@@ -24,6 +24,7 @@ If any is missing, skip it.
 
 - [0001](./0001-lucide-enum-is-a-plain-backed-enum.md) — Lucide enum is a plain backed enum, not a `ScalableIcon`
 - [0002](./0002-single-package-auto-discovered-filament-overlay.md) — single package; Filament overlay is an auto-discovered, self-guarding provider
+- [0003](./0003-lucide-static-is-the-single-source-of-truth.md) — `lucide-static` is the single source of truth; alias/deprecation metadata out of scope
 
-Still open for future records: the upstream sourcing strategy (git tag vs. npm tarball) and
-the enum case-naming rule.
+Still open for future records: the enum case-naming rule, and the sync/CI pipeline shape
+(daily age-gated `pnpm update` → regenerate → single rolling PR).
