@@ -16,6 +16,5 @@ When a skill mentions a role (e.g. "apply the AFK-ready triage label"), use the 
 
 Edit the right-hand column to match whatever vocabulary you actually use.
 
-> These labels are **not yet created on GitHub** — there's no remote yet. The
-> `gh label create` commands that materialise them live in `issue-tracker.md` under
-> _Bootstrapping_.
+> These labels are live on `fuzzyfox/lucide-for-laravel`. The `gh label create` commands
+> that materialise them are recorded in `issue-tracker.md` under _History_.

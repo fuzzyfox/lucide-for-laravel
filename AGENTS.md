@@ -12,8 +12,8 @@ for the domain glossary.
 
 ### Issue tracker
 
-GitHub Issues, driven via the `gh` CLI. **No GitHub remote exists yet** — the remote and
-the label set still need to be created (see `docs/agents/issue-tracker.md`).
+GitHub Issues at `fuzzyfox/lucide-for-laravel` (private), driven via the `gh` CLI. The
+default Pocock triage labels are applied. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
