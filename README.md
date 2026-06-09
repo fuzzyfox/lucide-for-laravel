@@ -1,8 +1,9 @@
 # lucide-for-laravel
 
-> **Status: initial idea dump.** This README is a raw capture of the concept, written
-> before any design grilling or implementation. Treat it as the seed, not the spec.
-> CONTEXT.md and the doc-set will supersede the relevant parts as they land.
+> **Status: pre-implementation.** This README began as a raw idea dump; the design has since
+> been grilled and captured in `CONTEXT.md` (glossary) and `docs/adr/` (decisions), which are
+> the spec. The notes below have been reconciled with those decisions, but are not yet usage
+> docs — no installable package exists yet.
 
 A Laravel + Filament package that provides [Lucide](https://lucide.dev) icons as a
 first-class, **always-current** icon set — generated directly from the official
@@ -24,9 +25,11 @@ release in, regenerated artifacts out, on our cadence.
 1. **Generates a blade-icons icon set from the official lucide repo.** Pulls the canonical
    `icons/*.svg` for a pinned lucide release and registers them as a blade-icons set under
    the `lucide-` prefix.
-2. **Provides a `Lucide` enum** — one case per glyph, implementing Filament's
-   `ScalableIcon` contract so it drops straight into `->icon(Lucide::Foo)` anywhere
-   Filament accepts an icon. This enum is a *generated artifact*, not hand-maintained.
+2. **Provides a `Lucide` enum** — one case per glyph. A plain `string`-backed enum whose
+   value is the icon-set name (`Lucide::Camera->value === 'lucide-camera'`); it does *not*
+   implement Filament's `ScalableIcon` — Filament resolves it via `->value`, so it still drops
+   straight into `->icon(Lucide::Camera)`. A *generated artifact*, not hand-maintained.
+   (See ADR-0001.)
 3. **Registers our Filament icon-alias overrides** — the `PanelsIconAlias::*` → `Lucide`
    map that re-skins Filament's built-in chrome (search box, sidebar toggles, theme
    switcher, notification bell, …) to match the Lucide icons we use on resources.
@@ -36,15 +39,16 @@ release in, regenerated artifacts out, on our cadence.
 Single source of truth, generated outward, so the parts can't drift:
 
 ```
-pinned lucide release (e.g. vX.Y.Z)        <- the only input
+pinned lucide-static version               <- the only input (npm, pnpm-pinned)
         │
-   [ generator ]                           <- artisan command, build-time only
-        ├── SVG set on disk  ──────────────┐
-        ├── blade-icons set registration   ├─ emitted artifacts (committed)
+   [ generator ]                           <- framework-free CLI, build-time only
+        ├── SVG icon set on disk  ─────────┐
+        ├── resources/svg/LICENSE          ├─ generated artifacts (committed)
         └── PHP `Lucide` enum  ────────────┘
-        
-   Filament alias-override plugin           <- the only hand-authored, Filament-coupled part
-        └── consumes the enum
+
+   service providers (static, hand-authored):
+        ├── LucideServiceProvider          <- registers the icon set with blade-icons
+        └── LucideFilamentServiceProvider  <- the Filament overlay (alias overrides)
 ```
 
 - **The enum and the SVG set are both regenerated from the same upstream snapshot in one
@@ -52,37 +56,34 @@ pinned lucide release (e.g. vX.Y.Z)        <- the only input
 - **Nothing is fetched at runtime.** blade-icons serves SVGs from disk; the enum is
   autoloaded. All work happens at sync time. Runtime cost is zero.
 
-### Proposed commands
+### The sync (ADR-0007 / 0009)
 
-- `lucide:sync vX.Y.Z` — fetch the pinned release, regenerate the SVG set + enum +
-  registration, all committed to the repo.
-- `lucide:sync --check` — CI mode: fail if committed artifacts are stale relative to the
-  pinned version. This check is what actually keeps us ahead of the abandoned packages.
+The generator is a framework-free CLI (`composer sync`), not an Artisan command. It reads the
+`icons/*.svg` from the pnpm-pinned `lucide-static` and regenerates the committed artifacts.
+*Bumping* the pin is separate from regenerating: a daily age-gated `bump → sync → test → PR`
+cron keeps us ahead of the laggy community packages. There is no `--check` command — a PHP
+test suite asserts the committed artifacts are internally consistent (enum ↔ icon set, plus the
+ADR-0004 guard-rails).
 
-Sourcing the raw `icons/*.svg` from `lucide-icons/lucide` (or the versioned npm tarball —
-same SVGs, easier to fetch one versioned artifact than to clone). Avoid the per-framework
-npm packages; the raw SVGs are the canonical, least-laggy source.
+## Design decisions (resolved — see `docs/adr/`)
 
-## Known gotchas to resolve during design
+The gotchas this idea-dump flagged were resolved during grilling:
 
-- **Enum case naming is not trivial.** kebab → PascalCase is fine until leading-digit
-  names and deprecated aliases, which PHP enum cases can't represent (`case 2Foo` is
-  illegal; aliases produce duplicate values). The generator needs a deterministic
-  sanitisation rule and must handle lucide's alias/deprecation map. **Most likely to bite
-  — decide the rule up front.**
-- **`ScalableIcon` semantics.** `getIconForScale()` should resolve to the registered
-  `lucide-{value}` name. Lucide's appeal is uniform stroke width, so we probably want CSS
-  sizing, not per-size SVG variants — confirm.
-- **License.** lucide is ISC. Vendoring the SVGs is fine; carry the notice.
-- **Keep the Filament layer optional.** Responsibilities (1) and (2) are useful in any
-  Laravel app; (3) is Filament-specific. Let consumers pull the icons without the Filament
-  opinions, even if internally we always use both.
+- **Enum case naming** — kebab → PascalCase with digit-runs as whole-number words
+  (`clock-12 → ClockTwelve`), guarded by a sync-time injectivity assertion. Generating from
+  SVG filenames (not alias metadata) sidesteps the duplicate-value problem entirely (ADR-0004,
+  ADR-0003).
+- **No `ScalableIcon`** — a plain backed enum, sized via CSS (uniform stroke), not per-size
+  variants (ADR-0001).
+- **License** — MIT for our code; vendored SVGs keep their ISC + Feather-MIT notices in
+  `resources/svg/LICENSE` (ADR-0005).
+- **Optional Filament layer** — the overlay is an auto-discovered, self-guarding service
+  provider, inert when Filament is absent (ADR-0002).
 
 ## Naming
 
-Working name / repo slug: `lucide-for-laravel`. Open question: the name should not imply
-this is *only* the Filament overrides — it's "fresh Lucide for Laravel, with our Filament
-defaults on top". Revisit before publishing.
+Package `fuzzyfox/lucide-for-laravel`, namespace `FuzzyFox\Lucide`, enum
+`FuzzyFox\Lucide\Lucide`, blade-icons prefix `lucide-` (ADR-0006).
 
 ## Relationship to the Filament bootstrap playbook
 
