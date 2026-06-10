@@ -1,0 +1,7 @@
+# Source-of-truth pin for the sync (ADR-0003, ADR-0009).
+#
+# minimumReleaseAge holds back freshly-published lucide-static releases so a
+# yanked or compromised just-published version cannot reach our pin. The daily
+# `bump -> sync -> test -> PR` cron honours this gate (PRD user story 24).
+# 4320 minutes == ~3 days.
+minimumReleaseAge: 4320

@@ -1,0 +1,9 @@
+{
+    "name": "lucide-for-laravel-build",
+    "description": "Build-time source-of-truth pin for fuzzyfox/lucide-for-laravel. Not published; pins lucide-static so the sync regenerates the committed artifacts from one upstream release.",
+    "private": true,
+    "license": "MIT AND ISC",
+    "dependencies": {
+        "lucide-static": "^1.0.0"
+    }
+}

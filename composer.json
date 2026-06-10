@@ -1,0 +1,64 @@
+{
+    "name": "fuzzyfox/lucide-for-laravel",
+    "description": "An always-current Lucide blade-icons set and PHP enum for Laravel and Filament, generated from the official Lucide release.",
+    "keywords": [
+        "laravel",
+        "filament",
+        "lucide",
+        "icons",
+        "blade-icons",
+        "blade"
+    ],
+    "homepage": "https://github.com/fuzzyfox/lucide-for-laravel",
+    "license": "MIT AND ISC",
+    "authors": [
+        {
+            "name": "William Duyck",
+            "email": "fuzzyfox0@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "blade-ui-kit/blade-icons": "^1.0"
+    },
+    "require-dev": {
+        "filament/filament": "^5.0",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "pestphp/pest": "^3.0 || ^4.0",
+        "symfony/console": "^6.0 || ^7.0"
+    },
+    "suggest": {
+        "filament/filament": "Enables the auto-discovered Filament overlay that re-skins Filament's built-in chrome icons (search field, sidebar toggles, notification bell, ...) to Lucide."
+    },
+    "autoload": {
+        "psr-4": {
+            "FuzzyFox\\Lucide\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FuzzyFox\\Lucide\\Generation\\": "generation/",
+            "FuzzyFox\\Lucide\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "sync": "@php bin/sync",
+        "test": "pest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FuzzyFox\\Lucide\\LucideServiceProvider",
+                "FuzzyFox\\Lucide\\LucideFilamentServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

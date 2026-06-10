@@ -1,0 +1,26 @@
+# Keep the dist archive to the shipped runtime: the generated enum, the two
+# service providers, and resources/. Everything below is build machinery or
+# repo hygiene that consumers never run (ADR-0009).
+
+# Build machinery
+/generation              export-ignore
+/bin                     export-ignore
+/tests                   export-ignore
+
+# Node tooling (the source-of-truth pin; only the sync/cron uses it)
+/package.json            export-ignore
+/pnpm-workspace.yaml     export-ignore
+/pnpm-lock.yaml          export-ignore
+
+# Dev tooling & CI
+/phpunit.xml             export-ignore
+/.github                 export-ignore
+/.gitattributes          export-ignore
+/.gitignore              export-ignore
+/.editorconfig           export-ignore
+
+# Docs & domain model (the spec lives in the repo, not the dist)
+/docs                    export-ignore
+/CONTEXT.md              export-ignore
+/AGENTS.md               export-ignore
+/CLAUDE.md               export-ignore
