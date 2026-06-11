@@ -1,0 +1,99 @@
+name: sync
+
+# Daily `bump -> sync -> test -> PR` cron (ADR-0009, PRD #1). Keeps our pinned
+# `lucide-static` ahead of the abandoned community packages while leaving the
+# merge — and thus freshness — a human decision.
+#
+# The steps run in order and any failure stops the job *before* the PR step, so a
+# bad upstream release (guard-rail violation) or a failing test surfaces as a
+# failed Action with no PR. Running the suite in-job makes this cron its own CI
+# gate: the committed tree is exactly what was tested, so the bot PR needs no
+# downstream CI and the default GITHUB_TOKEN suffices (no PAT).
+
+on:
+  schedule:
+    # 07:00 UTC daily — off the top of the hour to dodge cron congestion.
+    - cron: '17 7 * * *'
+  # Let a maintainer kick a run manually (e.g. to pull a fix forward).
+  workflow_dispatch:
+
+# create-pull-request needs to push the branch and open/update the PR.
+permissions:
+  contents: write
+  pull-requests: write
+
+# Never let two runs race on the rolling branch.
+concurrency:
+  group: lucide-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: bump -> sync -> test -> PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          # Single representative leg — the full PHP x Laravel matrix is the
+          # tests workflow's job; here we just need the suite to gate the PR.
+          php-version: '8.4'
+          coverage: none
+
+      - name: Install Composer deps
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - uses: pnpm/action-setup@v4
+        with:
+          # >= 10.16 for `minimumReleaseAge` (read from pnpm-workspace.yaml).
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      # 1. Bump — the only step that moves the pinned version. `pnpm update`
+      #    stays within the `^1.0.0` range in package.json (so within `^1.x`)
+      #    and honours `minimumReleaseAge` (~3 days) from pnpm-workspace.yaml,
+      #    so a yanked/compromised just-published upstream can't reach our pin.
+      - name: Bump lucide-static (age-gated, within ^1.x)
+        run: pnpm update lucide-static
+
+      # 2. Sync — regenerate the committed artifacts from the new pin. The
+      #    generator's sync-time guard-rails fail the job here on a bad glyph set.
+      - name: Sync generated artifacts
+        run: composer sync
+
+      # 3. Test — the Pest suite (correspondence + guard-rails) over the freshly
+      #    regenerated tree. A red leg fails the job, and the PR step never runs.
+      - name: Run Pest
+        run: ./vendor/bin/pest
+
+      # 4. PR — only reached on green. Commits the working-tree changes
+      #    (pnpm-lock.yaml + regenerated resources/svg + src/Lucide.php) onto a
+      #    fixed branch, so repeated runs update one rolling PR rather than a
+      #    flood. The diff shows exactly which glyphs were added/removed/changed.
+      #    Human-merged; uses the default GITHUB_TOKEN.
+      - name: Open or update the rolling sync PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/lucide-sync
+          commit-message: '⬆️ chore: sync Lucide icon set to latest lucide-static'
+          title: '⬆️ chore: sync Lucide icon set to latest lucide-static'
+          body: |
+            Automated `bump -> sync -> test -> PR` run (ADR-0009).
+
+            Bumped the pinned `lucide-static` within `^1.x` (age-gated by
+            `minimumReleaseAge`), regenerated the icon set and `Lucide` enum, and
+            the Pest suite passed against the regenerated tree.
+
+            The diff below is the source of truth for which glyphs were
+            **added / removed / changed**. Review and merge to ship — freshness
+            stays a human decision.
+          labels: automated-sync
+          delete-branch: false
