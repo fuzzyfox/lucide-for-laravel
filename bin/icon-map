@@ -1,0 +1,115 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+namespace FuzzyFox\Lucide\Tools;
+
+use Filament\Actions\View\ActionsIconAlias;
+use Filament\Forms\View\FormsIconAlias;
+use Filament\Infolists\View\InfolistsIconAlias;
+use Filament\Notifications\View\NotificationsIconAlias;
+use Filament\QueryBuilder\View\QueryBuilderIconAlias;
+use Filament\Schemas\View\SchemaIconAlias;
+use Filament\Support\Icons\Heroicon;
+use Filament\Support\View\SupportIconAlias;
+use Filament\Tables\View\TablesIconAlias;
+use Filament\View\PanelsIconAlias;
+use Filament\Widgets\View\WidgetsIconAlias;
+use FuzzyFox\Lucide\Lucide;
+use FuzzyFox\Lucide\LucideFilamentServiceProvider;
+use FuzzyFox\Lucide\Tools\FilamentHeroiconDefaults;
+use ReflectionClass;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\SingleCommandApplication;
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+/*
+ * Maintainer-only verification CLI: renders build/icon-map.html — every Filament
+ * chrome icon slot next to the Lucide glyph it re-skins to, grouped by the
+ * Filament package that defines it — so a human can eyeball the alias-override
+ * map. Framework-free (no Laravel boot); aliased as `composer icon-map`.
+ */
+
+$root = dirname(__DIR__);
+
+(new SingleCommandApplication())
+    ->setName('icon-map')
+    ->setDescription('Render an HTML page of the Filament alias-override map for human verification.')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use ($root): int {
+        // Filament package => display label, in reading order across the chrome.
+        $aliasClasses = [
+            PanelsIconAlias::class => 'Panels',
+            ActionsIconAlias::class => 'Actions',
+            FormsIconAlias::class => 'Forms',
+            InfolistsIconAlias::class => 'Infolists',
+            NotificationsIconAlias::class => 'Notifications',
+            QueryBuilderIconAlias::class => 'Query builder',
+            SchemaIconAlias::class => 'Schema',
+            SupportIconAlias::class => 'Support',
+            TablesIconAlias::class => 'Tables',
+            WidgetsIconAlias::class => 'Widgets',
+        ];
+
+        $map = LucideFilamentServiceProvider::aliasOverrides();
+        $heroDefaults = FilamentHeroiconDefaults::map();
+
+        $groups = [];
+
+        foreach ($aliasClasses as $class => $label) {
+            $rows = [];
+
+            foreach ((new ReflectionClass($class))->getConstants() as $alias) {
+                $glyph = $map[$alias] ?? null;
+                $hero = $heroDefaults[$alias] ?? null;
+
+                $rows[] = [
+                    'alias' => $alias,
+                    'case' => $glyph instanceof Lucide ? $glyph->name : null,
+                    'svg' => $glyph instanceof Lucide ? lucideSvg($root, $glyph) : null,
+                    'heroSvg' => $hero instanceof Heroicon ? heroiconSvg($root, $hero) : null,
+                ];
+            }
+
+            $groups[] = ['label' => $label, 'rows' => $rows];
+        }
+
+        $path = $root.'/build/icon-map.html';
+
+        if (! is_dir(dirname($path))) {
+            mkdir(dirname($path), 0o755, true);
+        }
+
+        file_put_contents($path, IconMapPage::render($groups));
+
+        $output->writeln(sprintf('<info>Wrote %s</info>', $path));
+
+        return Command::SUCCESS;
+    })
+    ->run();
+
+/**
+ * Inline the committed icon-set SVG backing a Lucide case (its value is the
+ * `lucide-`-prefixed set name; the file drops that prefix).
+ */
+function lucideSvg(string $root, Lucide $glyph): string
+{
+    $name = preg_replace('/^lucide-/', '', $glyph->value);
+
+    return (string) file_get_contents($root.'/resources/svg/'.$name.'.svg');
+}
+
+/**
+ * Inline a Heroicon's SVG from the installed blade-heroicons set. The enum's
+ * value is the file stem for outlined icons (`o-trash`); solid-family cases are
+ * unprefixed (`trash`), so default those to the solid (`s-`) variant.
+ */
+function heroiconSvg(string $root, Heroicon $hero): string
+{
+    $stem = preg_match('/^[osmc]-/', $hero->value) ? $hero->value : 's-'.$hero->value;
+
+    return (string) file_get_contents($root.'/vendor/blade-ui-kit/blade-heroicons/resources/svg/'.$stem.'.svg');
+}

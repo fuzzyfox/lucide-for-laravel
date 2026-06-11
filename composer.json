@@ -38,11 +38,13 @@
     "autoload-dev": {
         "psr-4": {
             "FuzzyFox\\Lucide\\Generation\\": "generation/",
+            "FuzzyFox\\Lucide\\Tools\\": "tools/",
             "FuzzyFox\\Lucide\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "sync": "@php bin/sync",
+        "icon-map": "@php bin/icon-map",
         "test": "pest"
     },
     "extra": {
