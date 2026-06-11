@@ -1,0 +1,72 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pest:
+    name: P${{ matrix.php }} · L${{ matrix.laravel }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      # One red leg should not cancel the rest of the matrix — we want the
+      # full picture of which combinations break.
+      fail-fast: false
+      matrix:
+        # Everything Filament v5 supports: PHP 8.2-8.5 x Laravel 11/12/13.
+        php: ['8.2', '8.3', '8.4', '8.5']
+        laravel: [11, 12, 13]
+        # Map each Laravel line to its Testbench major (TB9->L11, 10->L12,
+        # 11->L13). `include` merges these onto every matching leg.
+        include:
+          - laravel: 11
+            testbench: '9'
+          - laravel: 12
+            testbench: '10'
+          - laravel: 13
+            testbench: '11'
+        exclude:
+          # Laravel 13's PHP floor is 8.3.
+          - laravel: 13
+            php: '8.2'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Pin Laravel line
+        # Force this leg's Testbench major (which in turn pins the Laravel
+        # line) before resolving, then let composer pick compatible deps.
+        run: |
+          # This is a compatibility matrix, not a production install: don't let
+          # an open advisory anywhere in the framework line (e.g. all current
+          # Laravel 11.x) block the resolve and turn a whole leg permanently red.
+          composer config --no-plugins policy.advisories.block false
+          composer require --dev --no-interaction --no-update \
+            "orchestra/testbench:^${{ matrix.testbench }}.0"
+          composer update --prefer-dist --prefer-stable --no-interaction
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - name: Install lucide-static
+        # The sync/guard-rail tests read real glyphs from node_modules; without
+        # this they self-skip and the matrix would be a weaker gate.
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Pest
+        run: ./vendor/bin/pest
