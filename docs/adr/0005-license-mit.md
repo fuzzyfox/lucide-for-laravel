@@ -5,7 +5,11 @@
 The package's own code is **MIT**. The vendored Lucide SVGs are redistributed under their
 upstream licenses — **ISC** for most icons, **MIT** (© Cole Bemis) for the ~120 Feather-derived
 icons — with those notices carried alongside the SVGs. `composer.json` declares
-`"license": "MIT AND ISC"`.
+`"license": "MIT"`: the root field names *this package's* license, and the vendored art's
+ISC/Feather-MIT notices travel with the files (`resources/svg/LICENSE`) rather than being
+conflated into the package's headline license. A compound `"MIT AND ISC"` expression was
+considered but rejected — it trips license scanners and the `packagist/l` badge, working against
+the adoption goal below, for no real gain over the colocated notices.
 
 ## Why MIT over MPL-2.0
 

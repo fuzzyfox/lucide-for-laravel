@@ -10,7 +10,7 @@
         "blade"
     ],
     "homepage": "https://github.com/fuzzyfox/lucide-for-laravel",
-    "license": "MIT AND ISC",
+    "license": "MIT",
     "authors": [
         {
             "name": "William Duyck",
