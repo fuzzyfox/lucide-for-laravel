@@ -1,18 +1,20 @@
 # lucide-for-laravel — agent guide
 
 A Laravel + Filament package that generates an always-current Lucide blade-icons set and a
-`ScalableIcon` `Lucide` enum from the official `lucide-icons/lucide` repository, plus
-optional Filament icon-alias overrides. See `README.md` for the concept and `CONTEXT.md`
-for the domain glossary.
+plain `string`-backed `Lucide` enum from the official `lucide-icons/lucide` repository, plus
+optional Filament icon-alias overrides. See `README.md` for usage and `CONTEXT.md` for the
+domain glossary.
 
-> **Status:** scaffolding only. The package design is intentionally left un-grilled — that
-> happens in a later session. Don't treat `CONTEXT.md`/`docs/` as a spec yet.
+> **Status:** implemented and released. The design is fixed in `CONTEXT.md` (glossary) and
+> `docs/adr/` (decisions 0001–0009) — treat both as the spec. The icon set and enum are
+> **generated artifacts**: change them via `composer sync` against an updated `lucide-static`
+> pin, never by hand.
 
 ## Agent skills
 
 ### Issue tracker
 
-GitHub Issues at `fuzzyfox/lucide-for-laravel` (private), driven via the `gh` CLI. The
+GitHub Issues at `fuzzyfox/lucide-for-laravel`, driven via the `gh` CLI. The
 default Pocock triage labels are applied. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
