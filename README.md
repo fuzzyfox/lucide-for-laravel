@@ -104,13 +104,27 @@ per-panel registration. No configuration required.
 
 Single source of truth, generated outward, so the parts can't drift:
 
-```
-pinned lucide-static version               ← the only input (npm, pnpm-pinned)
-        │
-   [ sync (framework-free CLI) ]           ← build-time only; boots no Laravel app
-        ├── resources/svg/*.svg  ──────────┐
-        ├── resources/svg/LICENSE          ├─ generated artifacts (committed & shipped)
-        └── src/Lucide.php (enum)  ─────────┘
+```mermaid
+flowchart LR
+    src["📦 lucide-static<br/>pinned via pnpm"]:::source
+    sync(["⚙️ composer sync"]):::build
+    svg["🎨 resources/svg/*.svg"]:::artifact
+    license["📄 resources/svg/LICENSE"]:::artifact
+    enum["🔤 src/Lucide.php"]:::artifact
+    blade["Blade<br/>@svg('lucide-*')"]:::runtime
+    php["PHP<br/>Lucide::Camera"]:::runtime
+
+    src -->|read| sync
+    sync -->|generate| svg
+    sync -->|generate| license
+    sync -->|generate| enum
+    svg --> blade
+    enum --> php
+
+    classDef source fill:#1e293b,stroke:#64748b,color:#e2e8f0
+    classDef build fill:#7c3aed,stroke:#a78bfa,color:#ffffff
+    classDef artifact fill:#0f766e,stroke:#2dd4bf,color:#ffffff
+    classDef runtime fill:#1e3a8a,stroke:#60a5fa,color:#ffffff
 ```
 
 - **The enum and the SVG set are regenerated from the same snapshot in one command**
