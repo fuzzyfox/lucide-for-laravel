@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+namespace FuzzyFox\Lucide\Generation;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\SingleCommandApplication;
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+/*
+ * The maintainer-only sync CLI (ADR-0007): a framework-free symfony/console
+ * single-command app that regenerates the committed artifacts from the pinned
+ * `lucide-static` package. It boots no Laravel — generation is filesystem reads,
+ * string transforms, and writes — and is aliased as `composer sync`.
+ */
+
+$root = dirname(__DIR__);
+
+(new SingleCommandApplication())
+    ->setName('sync')
+    ->setDescription('Regenerate the Lucide icon set and enum from node_modules/lucide-static.')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use ($root): int {
+        $source = new IconSource($root.'/node_modules/lucide-static');
+
+        (new Sync($source, $root.'/resources/svg', $root.'/src/Lucide.php'))->run();
+
+        $output->writeln(sprintf('<info>Synced %d glyphs.</info>', count($source->glyphs())));
+
+        return Command::SUCCESS;
+    })
+    ->run();
