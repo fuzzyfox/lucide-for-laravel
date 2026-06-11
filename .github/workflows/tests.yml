@@ -45,6 +45,10 @@ jobs:
         # Force this leg's Testbench major (which in turn pins the Laravel
         # line) before resolving, then let composer pick compatible deps.
         run: |
+          # This is a compatibility matrix, not a production install: don't let
+          # an open advisory anywhere in the framework line (e.g. all current
+          # Laravel 11.x) block the resolve and turn a whole leg permanently red.
+          composer config --no-plugins policy.advisories.block false
           composer require --dev --no-interaction --no-update \
             "orchestra/testbench:^${{ matrix.testbench }}.0"
           composer update --prefer-dist --prefer-stable --no-interaction
