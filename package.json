@@ -4,6 +4,6 @@
     "private": true,
     "license": "MIT AND ISC",
     "dependencies": {
-        "lucide-static": "^1.0.0"
+        "lucide-static": "^1.18.0"
     }
 }

@@ -1367,6 +1367,7 @@ enum Lucide: string
     case PlaneTakeoff = 'lucide-plane-takeoff';
     case Play = 'lucide-play';
     case PlayCircle = 'lucide-play-circle';
+    case PlayOff = 'lucide-play-off';
     case PlaySquare = 'lucide-play-square';
     case Plug = 'lucide-plug';
     case PlugTwo = 'lucide-plug-2';
@@ -1928,6 +1929,7 @@ enum Lucide: string
     case WavesVertical = 'lucide-waves-vertical';
     case Waypoints = 'lucide-waypoints';
     case Webcam = 'lucide-webcam';
+    case WebcamOff = 'lucide-webcam-off';
     case Webhook = 'lucide-webhook';
     case WebhookOff = 'lucide-webhook-off';
     case Weight = 'lucide-weight';
