@@ -33,10 +33,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@v2 # Node-24-native; latest major remains v2.
         with:
           # Single representative leg — the full PHP x Laravel matrix is the
           # tests workflow's job; here we just need the suite to gate the PR.
@@ -46,13 +46,13 @@ jobs:
       - name: Install Composer deps
         run: composer install --prefer-dist --no-interaction --no-progress
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           # >= 10.16 for `minimumReleaseAge` (read from pnpm-workspace.yaml).
           version: 10
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: lts/*
           cache: pnpm
@@ -80,7 +80,7 @@ jobs:
       #    flood. The diff shows exactly which glyphs were added/removed/changed.
       #    Human-merged; uses the default GITHUB_TOKEN.
       - name: Open or update the rolling sync PR
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: automation/lucide-sync
           commit-message: '⬆️ chore: sync Lucide icon set to latest lucide-static'

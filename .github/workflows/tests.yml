@@ -33,7 +33,7 @@ jobs:
             php: '8.2'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -53,12 +53,12 @@ jobs:
             "orchestra/testbench:^${{ matrix.testbench }}.0"
           composer update --prefer-dist --prefer-stable --no-interaction
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           version: 10
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: lts/*
           cache: pnpm
