@@ -458,6 +458,7 @@ enum Lucide: string
     case CircleDotDashed = 'lucide-circle-dot-dashed';
     case CircleEllipsis = 'lucide-circle-ellipsis';
     case CircleEqual = 'lucide-circle-equal';
+    case CircleEuroSign = 'lucide-circle-euro-sign';
     case CircleFadingArrowUp = 'lucide-circle-fading-arrow-up';
     case CircleFadingPlus = 'lucide-circle-fading-plus';
     case CircleGauge = 'lucide-circle-gauge';
@@ -604,8 +605,14 @@ enum Lucide: string
     case Cylinder = 'lucide-cylinder';
     case Dam = 'lucide-dam';
     case Database = 'lucide-database';
+    case DatabaseArrowDown = 'lucide-database-arrow-down';
+    case DatabaseArrowUp = 'lucide-database-arrow-up';
     case DatabaseBackup = 'lucide-database-backup';
+    case DatabaseCheck = 'lucide-database-check';
+    case DatabaseMinus = 'lucide-database-minus';
+    case DatabasePlus = 'lucide-database-plus';
     case DatabaseSearch = 'lucide-database-search';
+    case DatabaseX = 'lucide-database-x';
     case DatabaseZap = 'lucide-database-zap';
     case DecimalsArrowLeft = 'lucide-decimals-arrow-left';
     case DecimalsArrowRight = 'lucide-decimals-arrow-right';
@@ -1314,6 +1321,7 @@ enum Lucide: string
     case PanelsRightBottom = 'lucide-panels-right-bottom';
     case PanelsTopBottom = 'lucide-panels-top-bottom';
     case PanelsTopLeft = 'lucide-panels-top-left';
+    case PaperBag = 'lucide-paper-bag';
     case Paperclip = 'lucide-paperclip';
     case Parasol = 'lucide-parasol';
     case Parentheses = 'lucide-parentheses';
@@ -1345,6 +1353,7 @@ enum Lucide: string
     case PercentDiamond = 'lucide-percent-diamond';
     case PercentSquare = 'lucide-percent-square';
     case PersonStanding = 'lucide-person-standing';
+    case Phi = 'lucide-phi';
     case PhilippinePeso = 'lucide-philippine-peso';
     case Phone = 'lucide-phone';
     case PhoneCall = 'lucide-phone-call';
