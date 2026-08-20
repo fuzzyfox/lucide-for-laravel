@@ -244,6 +244,7 @@ final class LucideFilamentServiceProvider extends ServiceProvider
             TablesIconAlias::SEARCH_FIELD => Lucide::Search,
 
             // Widgets
+            WidgetsIconAlias::CHART_WIDGET_EMPTY_STATE => Lucide::X,
             WidgetsIconAlias::CHART_WIDGET_FILTER => Lucide::ListFilter,
         ];
     }

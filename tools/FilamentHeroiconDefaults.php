@@ -199,6 +199,7 @@ final class FilamentHeroiconDefaults
             TablesIconAlias::SEARCH_FIELD => Heroicon::MagnifyingGlass,
 
             // Widgets
+            WidgetsIconAlias::CHART_WIDGET_EMPTY_STATE => Heroicon::OutlinedXMark,
             WidgetsIconAlias::CHART_WIDGET_FILTER => Heroicon::Funnel,
         ];
     }
