@@ -102,7 +102,7 @@ final class LucideFilamentServiceProvider extends ServiceProvider
 
             // Panels
             PanelsIconAlias::GLOBAL_SEARCH_FIELD => Lucide::Search,
-            PanelsIconAlias::PAGES_DASHBOARD_ACTIONS_FILTER => Lucide::ListFilter,
+            PanelsIconAlias::PAGES_DASHBOARD_ACTIONS_FILTER => Lucide::Funnel,
             PanelsIconAlias::PAGES_DASHBOARD_NAVIGATION_ITEM => Lucide::LayoutDashboard,
             PanelsIconAlias::PAGES_PASSWORD_RESET_REQUEST_PASSWORD_RESET_ACTIONS_LOGIN => Lucide::ArrowLeft,
             PanelsIconAlias::PAGES_PASSWORD_RESET_REQUEST_PASSWORD_RESET_ACTIONS_LOGIN_RTL => Lucide::ArrowRight,
@@ -227,7 +227,7 @@ final class LucideFilamentServiceProvider extends ServiceProvider
             // Tables
             TablesIconAlias::ACTIONS_DISABLE_REORDERING => Lucide::Check,
             TablesIconAlias::ACTIONS_ENABLE_REORDERING => Lucide::ArrowUpDown,
-            TablesIconAlias::ACTIONS_FILTER => Lucide::ListFilter,
+            TablesIconAlias::ACTIONS_FILTER => Lucide::Funnel,
             TablesIconAlias::ACTIONS_GROUP => Lucide::Layers,
             TablesIconAlias::ACTIONS_OPEN_BULK_ACTIONS => Lucide::EllipsisVertical,
             TablesIconAlias::ACTIONS_COLUMN_MANAGER => Lucide::ColumnsThree,
@@ -245,7 +245,7 @@ final class LucideFilamentServiceProvider extends ServiceProvider
 
             // Widgets
             WidgetsIconAlias::CHART_WIDGET_EMPTY_STATE => Lucide::X,
-            WidgetsIconAlias::CHART_WIDGET_FILTER => Lucide::ListFilter,
+            WidgetsIconAlias::CHART_WIDGET_FILTER => Lucide::Funnel,
         ];
     }
 }
