@@ -64,6 +64,7 @@ enum Lucide: string
     case Ampersands = 'lucide-ampersands';
     case Amphora = 'lucide-amphora';
     case Anchor = 'lucide-anchor';
+    case Angle = 'lucide-angle';
     case Angry = 'lucide-angry';
     case Annoyed = 'lucide-annoyed';
     case Antenna = 'lucide-antenna';
@@ -154,6 +155,8 @@ enum Lucide: string
     case AtSign = 'lucide-at-sign';
     case Atom = 'lucide-atom';
     case AudioLines = 'lucide-audio-lines';
+    case AudioLinesOff = 'lucide-audio-lines-off';
+    case AudioLinesX = 'lucide-audio-lines-x';
     case AudioWaveform = 'lucide-audio-waveform';
     case Award = 'lucide-award';
     case Axe = 'lucide-axe';
@@ -309,6 +312,8 @@ enum Lucide: string
     case BriefcaseMedical = 'lucide-briefcase-medical';
     case BringToFront = 'lucide-bring-to-front';
     case Broccoli = 'lucide-broccoli';
+    case Broom = 'lucide-broom';
+    case BroomSparkles = 'lucide-broom-sparkles';
     case Brush = 'lucide-brush';
     case BrushCleaning = 'lucide-brush-cleaning';
     case Bubbles = 'lucide-bubbles';
@@ -357,6 +362,7 @@ enum Lucide: string
     case Captions = 'lucide-captions';
     case CaptionsOff = 'lucide-captions-off';
     case Car = 'lucide-car';
+    case CarBattery = 'lucide-car-battery';
     case CarFront = 'lucide-car-front';
     case CarTaxiFront = 'lucide-car-taxi-front';
     case Caravan = 'lucide-caravan';
@@ -458,7 +464,7 @@ enum Lucide: string
     case CircleDotDashed = 'lucide-circle-dot-dashed';
     case CircleEllipsis = 'lucide-circle-ellipsis';
     case CircleEqual = 'lucide-circle-equal';
-    case CircleEuroSign = 'lucide-circle-euro-sign';
+    case CircleEuro = 'lucide-circle-euro';
     case CircleFadingArrowUp = 'lucide-circle-fading-arrow-up';
     case CircleFadingPlus = 'lucide-circle-fading-plus';
     case CircleGauge = 'lucide-circle-gauge';
@@ -672,6 +678,7 @@ enum Lucide: string
     case Egg = 'lucide-egg';
     case EggFried = 'lucide-egg-fried';
     case EggOff = 'lucide-egg-off';
+    case Eject = 'lucide-eject';
     case Ellipse = 'lucide-ellipse';
     case Ellipsis = 'lucide-ellipsis';
     case EllipsisVertical = 'lucide-ellipsis-vertical';
@@ -689,6 +696,13 @@ enum Lucide: string
     case EyeClosed = 'lucide-eye-closed';
     case EyeDashed = 'lucide-eye-dashed';
     case EyeOff = 'lucide-eye-off';
+    case FaceAngry = 'lucide-face-angry';
+    case FaceExpressionless = 'lucide-face-expressionless';
+    case FaceGrinning = 'lucide-face-grinning';
+    case FaceNeutral = 'lucide-face-neutral';
+    case FaceSlightlyFrowning = 'lucide-face-slightly-frowning';
+    case FaceSlightlySmiling = 'lucide-face-slightly-smiling';
+    case FaceSlightlySmilingPlus = 'lucide-face-slightly-smiling-plus';
     case Factory = 'lucide-factory';
     case Fan = 'lucide-fan';
     case FastForward = 'lucide-fast-forward';
@@ -1037,13 +1051,18 @@ enum Lucide: string
     case Lasso = 'lucide-lasso';
     case LassoSelect = 'lucide-lasso-select';
     case Laugh = 'lucide-laugh';
+    case LayerArrowDown = 'lucide-layer-arrow-down';
+    case LayerArrowUp = 'lucide-layer-arrow-up';
     case Layers = 'lucide-layers';
     case LayersTwo = 'lucide-layers-2';
     case LayersThree = 'lucide-layers-3';
+    case LayersArrowDown = 'lucide-layers-arrow-down';
+    case LayersArrowUp = 'lucide-layers-arrow-up';
     case LayersMinus = 'lucide-layers-minus';
     case LayersPlus = 'lucide-layers-plus';
     case Layout = 'lucide-layout';
     case LayoutDashboard = 'lucide-layout-dashboard';
+    case LayoutFreeform = 'lucide-layout-freeform';
     case LayoutGrid = 'lucide-layout-grid';
     case LayoutList = 'lucide-layout-list';
     case LayoutPanelLeft = 'lucide-layout-panel-left';
@@ -1074,6 +1093,7 @@ enum Lucide: string
     case ListChecks = 'lucide-list-checks';
     case ListChevronsDownUp = 'lucide-list-chevrons-down-up';
     case ListChevronsUpDown = 'lucide-list-chevrons-up-down';
+    case ListClock = 'lucide-list-clock';
     case ListCollapse = 'lucide-list-collapse';
     case ListEnd = 'lucide-list-end';
     case ListFilter = 'lucide-list-filter';
@@ -1112,6 +1132,7 @@ enum Lucide: string
     case MSquare = 'lucide-m-square';
     case Magnet = 'lucide-magnet';
     case Mail = 'lucide-mail';
+    case MailBadge = 'lucide-mail-badge';
     case MailCheck = 'lucide-mail-check';
     case MailMinus = 'lucide-mail-minus';
     case MailOpen = 'lucide-mail-open';
@@ -1187,11 +1208,14 @@ enum Lucide: string
     case Metronome = 'lucide-metronome';
     case Mic = 'lucide-mic';
     case MicTwo = 'lucide-mic-2';
+    case MicAudioLines = 'lucide-mic-audio-lines';
     case MicOff = 'lucide-mic-off';
+    case MicSignal = 'lucide-mic-signal';
     case MicVocal = 'lucide-mic-vocal';
     case Microchip = 'lucide-microchip';
     case Microscope = 'lucide-microscope';
     case Microwave = 'lucide-microwave';
+    case MidiPort = 'lucide-midi-port';
     case Milestone = 'lucide-milestone';
     case Milk = 'lucide-milk';
     case MilkOff = 'lucide-milk-off';
@@ -1218,8 +1242,11 @@ enum Lucide: string
     case MonitorX = 'lucide-monitor-x';
     case Moon = 'lucide-moon';
     case MoonStar = 'lucide-moon-star';
+    case Mop = 'lucide-mop';
+    case MopSparkles = 'lucide-mop-sparkles';
     case MoreHorizontal = 'lucide-more-horizontal';
     case MoreVertical = 'lucide-more-vertical';
+    case Mosque = 'lucide-mosque';
     case Motorbike = 'lucide-motorbike';
     case Mountain = 'lucide-mountain';
     case MountainSnow = 'lucide-mountain-snow';
@@ -1472,9 +1499,11 @@ enum Lucide: string
     case RotateThreeD = 'lucide-rotate-3-d';
     case RotateThreed = 'lucide-rotate-3d';
     case RotateCcw = 'lucide-rotate-ccw';
+    case RotateCcwClock = 'lucide-rotate-ccw-clock';
     case RotateCcwKey = 'lucide-rotate-ccw-key';
     case RotateCcwSquare = 'lucide-rotate-ccw-square';
     case RotateCw = 'lucide-rotate-cw';
+    case RotateCwFadingClock = 'lucide-rotate-cw-fading-clock';
     case RotateCwSquare = 'lucide-rotate-cw-square';
     case Route = 'lucide-route';
     case RouteOff = 'lucide-route-off';
@@ -1505,12 +1534,14 @@ enum Lucide: string
     case Scaling = 'lucide-scaling';
     case Scan = 'lucide-scan';
     case ScanBarcode = 'lucide-scan-barcode';
+    case ScanBox = 'lucide-scan-box';
     case ScanEye = 'lucide-scan-eye';
     case ScanFace = 'lucide-scan-face';
     case ScanHeart = 'lucide-scan-heart';
     case ScanLine = 'lucide-scan-line';
     case ScanQrCode = 'lucide-scan-qr-code';
     case ScanSearch = 'lucide-scan-search';
+    case ScanSquare = 'lucide-scan-square';
     case ScanText = 'lucide-scan-text';
     case ScatterChart = 'lucide-scatter-chart';
     case School = 'lucide-school';
@@ -1541,6 +1572,7 @@ enum Lucide: string
     case ServerCog = 'lucide-server-cog';
     case ServerCrash = 'lucide-server-crash';
     case ServerOff = 'lucide-server-off';
+    case ServerPlus = 'lucide-server-plus';
     case Settings = 'lucide-settings';
     case SettingsTwo = 'lucide-settings-2';
     case Shapes = 'lucide-shapes';
@@ -1558,6 +1590,8 @@ enum Lucide: string
     case ShieldCogCorner = 'lucide-shield-cog-corner';
     case ShieldEllipsis = 'lucide-shield-ellipsis';
     case ShieldHalf = 'lucide-shield-half';
+    case ShieldKeyhole = 'lucide-shield-keyhole';
+    case ShieldLock = 'lucide-shield-lock';
     case ShieldMinus = 'lucide-shield-minus';
     case ShieldOff = 'lucide-shield-off';
     case ShieldPlus = 'lucide-shield-plus';
@@ -1667,6 +1701,7 @@ enum Lucide: string
     case SquareDashedMousePointer = 'lucide-square-dashed-mouse-pointer';
     case SquareDashedText = 'lucide-square-dashed-text';
     case SquareDashedTopSolid = 'lucide-square-dashed-top-solid';
+    case SquareDimensions = 'lucide-square-dimensions';
     case SquareDivide = 'lucide-square-divide';
     case SquareDot = 'lucide-square-dot';
     case SquareEqual = 'lucide-square-equal';
@@ -1678,6 +1713,7 @@ enum Lucide: string
     case SquareMenu = 'lucide-square-menu';
     case SquareMinus = 'lucide-square-minus';
     case SquareMousePointer = 'lucide-square-mouse-pointer';
+    case SquareOff = 'lucide-square-off';
     case SquareParking = 'lucide-square-parking';
     case SquareParkingOff = 'lucide-square-parking-off';
     case SquarePause = 'lucide-square-pause';
@@ -1700,6 +1736,7 @@ enum Lucide: string
     case SquareStar = 'lucide-square-star';
     case SquareStop = 'lucide-square-stop';
     case SquareTerminal = 'lucide-square-terminal';
+    case SquareText = 'lucide-square-text';
     case SquareUser = 'lucide-square-user';
     case SquareUserRound = 'lucide-square-user-round';
     case SquareX = 'lucide-square-x';
@@ -1880,6 +1917,7 @@ enum Lucide: string
     case Upload = 'lucide-upload';
     case UploadCloud = 'lucide-upload-cloud';
     case Usb = 'lucide-usb';
+    case UsbCPort = 'lucide-usb-c-port';
     case User = 'lucide-user';
     case UserTwo = 'lucide-user-2';
     case UserCheck = 'lucide-user-check';
@@ -1906,6 +1944,7 @@ enum Lucide: string
     case UserRoundSearch = 'lucide-user-round-search';
     case UserRoundX = 'lucide-user-round-x';
     case UserSearch = 'lucide-user-search';
+    case UserShield = 'lucide-user-shield';
     case UserSquare = 'lucide-user-square';
     case UserSquareTwo = 'lucide-user-square-2';
     case UserStar = 'lucide-user-star';
