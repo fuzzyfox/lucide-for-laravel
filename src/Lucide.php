@@ -872,6 +872,7 @@ enum Lucide: string
     case Funnel = 'lucide-funnel';
     case FunnelPlus = 'lucide-funnel-plus';
     case FunnelX = 'lucide-funnel-x';
+    case Galaxy = 'lucide-galaxy';
     case GalleryHorizontal = 'lucide-gallery-horizontal';
     case GalleryHorizontalEnd = 'lucide-gallery-horizontal-end';
     case GalleryThumbnails = 'lucide-gallery-thumbnails';
@@ -1134,6 +1135,7 @@ enum Lucide: string
     case Mail = 'lucide-mail';
     case MailBadge = 'lucide-mail-badge';
     case MailCheck = 'lucide-mail-check';
+    case MailClock = 'lucide-mail-clock';
     case MailMinus = 'lucide-mail-minus';
     case MailOpen = 'lucide-mail-open';
     case MailPlus = 'lucide-mail-plus';
@@ -1492,6 +1494,7 @@ enum Lucide: string
     case Rewind = 'lucide-rewind';
     case Ribbon = 'lucide-ribbon';
     case Road = 'lucide-road';
+    case RobotArm = 'lucide-robot-arm';
     case Rocket = 'lucide-rocket';
     case RockingChair = 'lucide-rocking-chair';
     case RollerCoaster = 'lucide-roller-coaster';
@@ -1600,6 +1603,7 @@ enum Lucide: string
     case ShieldUser = 'lucide-shield-user';
     case ShieldX = 'lucide-shield-x';
     case Ship = 'lucide-ship';
+    case ShipCargo = 'lucide-ship-cargo';
     case ShipWheel = 'lucide-ship-wheel';
     case Shirt = 'lucide-shirt';
     case ShoppingBag = 'lucide-shopping-bag';
@@ -1868,6 +1872,7 @@ enum Lucide: string
     case ToyBrick = 'lucide-toy-brick';
     case Tractor = 'lucide-tractor';
     case TrafficCone = 'lucide-traffic-cone';
+    case Trailer = 'lucide-trailer';
     case Train = 'lucide-train';
     case TrainFront = 'lucide-train-front';
     case TrainFrontTunnel = 'lucide-train-front-tunnel';
