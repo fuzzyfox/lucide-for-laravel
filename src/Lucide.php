@@ -78,6 +78,7 @@ enum Lucide: string
     case ArchiveX = 'lucide-archive-x';
     case AreaChart = 'lucide-area-chart';
     case Armchair = 'lucide-armchair';
+    case ArmenianDram = 'lucide-armenian-dram';
     case ArrowBigDown = 'lucide-arrow-big-down';
     case ArrowBigDownDash = 'lucide-arrow-big-down-dash';
     case ArrowBigLeft = 'lucide-arrow-big-left';
@@ -188,6 +189,7 @@ enum Lucide: string
     case Ban = 'lucide-ban';
     case Banana = 'lucide-banana';
     case Bandage = 'lucide-bandage';
+    case BangladeshiTaka = 'lucide-bangladeshi-taka';
     case Banknote = 'lucide-banknote';
     case BanknoteArrowDown = 'lucide-banknote-arrow-down';
     case BanknoteArrowUp = 'lucide-banknote-arrow-up';
@@ -312,6 +314,7 @@ enum Lucide: string
     case BriefcaseBusiness = 'lucide-briefcase-business';
     case BriefcaseConveyorBelt = 'lucide-briefcase-conveyor-belt';
     case BriefcaseMedical = 'lucide-briefcase-medical';
+    case BriefcasePlus = 'lucide-briefcase-plus';
     case BringToFront = 'lucide-bring-to-front';
     case Broccoli = 'lucide-broccoli';
     case Broom = 'lucide-broom';
@@ -503,6 +506,9 @@ enum Lucide: string
     case CircuitBoard = 'lucide-circuit-board';
     case Citrus = 'lucide-citrus';
     case Clapperboard = 'lucide-clapperboard';
+    case ClefAlto = 'lucide-clef-alto';
+    case ClefBass = 'lucide-clef-bass';
+    case ClefTreble = 'lucide-clef-treble';
     case Clipboard = 'lucide-clipboard';
     case ClipboardCheck = 'lucide-clipboard-check';
     case ClipboardClock = 'lucide-clipboard-clock';
@@ -621,6 +627,7 @@ enum Lucide: string
     case Crown = 'lucide-crown';
     case Cuboid = 'lucide-cuboid';
     case CupSoda = 'lucide-cup-soda';
+    case Cupcake = 'lucide-cupcake';
     case CurlyBraces = 'lucide-curly-braces';
     case Currency = 'lucide-currency';
     case Cylinder = 'lucide-cylinder';
@@ -667,7 +674,9 @@ enum Lucide: string
     case Dome = 'lucide-dome';
     case Donut = 'lucide-donut';
     case DoorClosed = 'lucide-door-closed';
+    case DoorClosedCog = 'lucide-door-closed-cog';
     case DoorClosedLocked = 'lucide-door-closed-locked';
+    case DoorClosedPackage = 'lucide-door-closed-package';
     case DoorOpen = 'lucide-door-open';
     case DoorStairwell = 'lucide-door-stairwell';
     case Dot = 'lucide-dot';
@@ -725,6 +734,7 @@ enum Lucide: string
     case Factory = 'lucide-factory';
     case Fan = 'lucide-fan';
     case FastForward = 'lucide-fast-forward';
+    case Faucet = 'lucide-faucet';
     case Feather = 'lucide-feather';
     case Fence = 'lucide-fence';
     case FerrisWheel = 'lucide-ferris-wheel';
@@ -1017,6 +1027,7 @@ enum Lucide: string
     case Hourglass = 'lucide-hourglass';
     case HourglassCog = 'lucide-hourglass-cog';
     case House = 'lucide-house';
+    case HouseCog = 'lucide-house-cog';
     case HouseHeart = 'lucide-house-heart';
     case HousePlug = 'lucide-house-plug';
     case HousePlus = 'lucide-house-plus';
@@ -1057,12 +1068,14 @@ enum Lucide: string
     case KanbanSquare = 'lucide-kanban-square';
     case KanbanSquareDashed = 'lucide-kanban-square-dashed';
     case Kayak = 'lucide-kayak';
+    case KazakhTenge = 'lucide-kazakh-tenge';
     case Key = 'lucide-key';
     case KeyRound = 'lucide-key-round';
     case KeySquare = 'lucide-key-square';
     case Keyboard = 'lucide-keyboard';
     case KeyboardMusic = 'lucide-keyboard-music';
     case KeyboardOff = 'lucide-keyboard-off';
+    case Lambda = 'lucide-lambda';
     case Lamp = 'lucide-lamp';
     case LampCeiling = 'lucide-lamp-ceiling';
     case LampDesk = 'lucide-lamp-desk';
@@ -1094,6 +1107,7 @@ enum Lucide: string
     case LayoutDashboard = 'lucide-layout-dashboard';
     case LayoutFreeform = 'lucide-layout-freeform';
     case LayoutGrid = 'lucide-layout-grid';
+    case LayoutGridCircles = 'lucide-layout-grid-circles';
     case LayoutList = 'lucide-layout-list';
     case LayoutPanelLeft = 'lucide-layout-panel-left';
     case LayoutPanelTop = 'lucide-layout-panel-top';
@@ -1104,6 +1118,7 @@ enum Lucide: string
     case LensConcave = 'lucide-lens-concave';
     case LensConvex = 'lucide-lens-convex';
     case LetterText = 'lucide-letter-text';
+    case Letters = 'lucide-letters';
     case Library = 'lucide-library';
     case LibraryBig = 'lucide-library-big';
     case LibrarySquare = 'lucide-library-square';
@@ -1113,7 +1128,10 @@ enum Lucide: string
     case LightbulbOff = 'lucide-lightbulb-off';
     case Lighthouse = 'lucide-lighthouse';
     case LineChart = 'lucide-line-chart';
+    case LineDotBottomVertical = 'lucide-line-dot-bottom-vertical';
+    case LineDotLeftHorizontal = 'lucide-line-dot-left-horizontal';
     case LineDotRightHorizontal = 'lucide-line-dot-right-horizontal';
+    case LineDotTopVertical = 'lucide-line-dot-top-vertical';
     case LineSquiggle = 'lucide-line-squiggle';
     case LineStyle = 'lucide-line-style';
     case Link = 'lucide-link';
@@ -1269,6 +1287,7 @@ enum Lucide: string
     case MonitorDown = 'lucide-monitor-down';
     case MonitorOff = 'lucide-monitor-off';
     case MonitorPause = 'lucide-monitor-pause';
+    case MonitorPc = 'lucide-monitor-pc';
     case MonitorPlay = 'lucide-monitor-play';
     case MonitorSmartphone = 'lucide-monitor-smartphone';
     case MonitorSpeaker = 'lucide-monitor-speaker';
@@ -1320,6 +1339,7 @@ enum Lucide: string
     case NavigationTwo = 'lucide-navigation-2';
     case NavigationTwoOff = 'lucide-navigation-2-off';
     case NavigationOff = 'lucide-navigation-off';
+    case NepaliRupee = 'lucide-nepali-rupee';
     case Network = 'lucide-network';
     case Newspaper = 'lucide-newspaper';
     case Nfc = 'lucide-nfc';
@@ -1478,6 +1498,7 @@ enum Lucide: string
     case PowerSquare = 'lucide-power-square';
     case Presentation = 'lucide-presentation';
     case Printer = 'lucide-printer';
+    case PrinterThreed = 'lucide-printer-3d';
     case PrinterCheck = 'lucide-printer-check';
     case PrinterX = 'lucide-printer-x';
     case Projector = 'lucide-projector';
@@ -1548,6 +1569,7 @@ enum Lucide: string
     case RotateCcwKey = 'lucide-rotate-ccw-key';
     case RotateCcwSquare = 'lucide-rotate-ccw-square';
     case RotateCw = 'lucide-rotate-cw';
+    case RotateCwClock = 'lucide-rotate-cw-clock';
     case RotateCwFadingClock = 'lucide-rotate-cw-fading-clock';
     case RotateCwSquare = 'lucide-rotate-cw-square';
     case Route = 'lucide-route';
@@ -1558,6 +1580,7 @@ enum Lucide: string
     case RowsThree = 'lucide-rows-3';
     case RowsFour = 'lucide-rows-4';
     case Rss = 'lucide-rss';
+    case RugbyBall = 'lucide-rugby-ball';
     case Ruler = 'lucide-ruler';
     case RulerDimensionLine = 'lucide-ruler-dimension-line';
     case RussianRuble = 'lucide-russian-ruble';
@@ -1749,8 +1772,11 @@ enum Lucide: string
     case SquareDashedBottomCode = 'lucide-square-dashed-bottom-code';
     case SquareDashedKanban = 'lucide-square-dashed-kanban';
     case SquareDashedMousePointer = 'lucide-square-dashed-mouse-pointer';
+    case SquareDashedPlus = 'lucide-square-dashed-plus';
     case SquareDashedText = 'lucide-square-dashed-text';
     case SquareDashedTopSolid = 'lucide-square-dashed-top-solid';
+    case SquareDashedX = 'lucide-square-dashed-x';
+    case SquareDashedXCorner = 'lucide-square-dashed-x-corner';
     case SquareDimensions = 'lucide-square-dimensions';
     case SquareDivide = 'lucide-square-divide';
     case SquareDot = 'lucide-square-dot';
@@ -1780,6 +1806,7 @@ enum Lucide: string
     case SquareScissors = 'lucide-square-scissors';
     case SquareSigma = 'lucide-square-sigma';
     case SquareSlash = 'lucide-square-slash';
+    case SquareSparkles = 'lucide-square-sparkles';
     case SquareSplitHorizontal = 'lucide-square-split-horizontal';
     case SquareSplitVertical = 'lucide-square-split-vertical';
     case SquareSquare = 'lucide-square-square';
@@ -1877,6 +1904,9 @@ enum Lucide: string
     case TextAlignCenter = 'lucide-text-align-center';
     case TextAlignEnd = 'lucide-text-align-end';
     case TextAlignJustify = 'lucide-text-align-justify';
+    case TextAlignJustifyCenter = 'lucide-text-align-justify-center';
+    case TextAlignJustifyEnd = 'lucide-text-align-justify-end';
+    case TextAlignJustifyStart = 'lucide-text-align-justify-start';
     case TextAlignStart = 'lucide-text-align-start';
     case TextCursor = 'lucide-text-cursor';
     case TextCursorInput = 'lucide-text-cursor-input';
@@ -1948,6 +1978,7 @@ enum Lucide: string
     case Trophy = 'lucide-trophy';
     case Truck = 'lucide-truck';
     case TruckElectric = 'lucide-truck-electric';
+    case TubeLotion = 'lucide-tube-lotion';
     case TurkishLira = 'lucide-turkish-lira';
     case Turntable = 'lucide-turntable';
     case Turtle = 'lucide-turtle';
@@ -2080,6 +2111,7 @@ enum Lucide: string
     case WifiZero = 'lucide-wifi-zero';
     case Wind = 'lucide-wind';
     case WindArrowDown = 'lucide-wind-arrow-down';
+    case WindArrowUp = 'lucide-wind-arrow-up';
     case Wine = 'lucide-wine';
     case WineOff = 'lucide-wine-off';
     case Workflow = 'lucide-workflow';
