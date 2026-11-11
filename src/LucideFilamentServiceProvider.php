@@ -52,12 +52,19 @@ final class LucideFilamentServiceProvider extends ServiceProvider
      * nor Heroicons ships a GitHub glyph, so there is no faithful replacement
      * and Filament's own logo is the best icon for the slot.
      *
+     * The rich editor's delete-column and delete-row tools use purpose-drawn
+     * Filament glyphs. Lucide has no equivalent, and a generic trash can would
+     * be indistinguishable from "delete table" in the same toolbar.
+     *
      * @return array<int, string>
      */
     public static function unmappedAliases(): array
     {
         return [
             PanelsIconAlias::WIDGETS_FILAMENT_INFO_OPEN_GITHUB_BUTTON,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_DELETE_COLUMN,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_DELETE_ROW,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_GRID_DELETE_COLUMN,
         ];
     }
 
@@ -186,6 +193,57 @@ final class LucideFilamentServiceProvider extends ServiceProvider
             FormsIconAlias::COMPONENTS_RICH_EDITOR_PANELS_CUSTOM_BLOCK_DELETE_BUTTON => Lucide::TrashTwo,
             FormsIconAlias::COMPONENTS_RICH_EDITOR_PANELS_CUSTOM_BLOCK_EDIT_BUTTON => Lucide::SquarePen,
             FormsIconAlias::COMPONENTS_RICH_EDITOR_PANELS_MERGE_TAGS_CLOSE_BUTTON => Lucide::X,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_ALIGN_CENTER => Lucide::TextAlignCenter,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_ALIGN_END => Lucide::TextAlignEnd,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_ALIGN_JUSTIFY => Lucide::TextAlignJustify,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_ALIGN_START => Lucide::TextAlignStart,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_ATTACH_FILES => Lucide::Paperclip,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_BLOCKQUOTE => Lucide::TextQuote,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_BOLD => Lucide::Bold,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_BULLET_LIST => Lucide::List,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_CLEAR_FORMATTING => Lucide::RemoveFormatting,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_CODE => Lucide::Code,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_CODE_BLOCK => Lucide::SquareCode,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_CUSTOM_BLOCKS => Lucide::SquarePlus,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_DETAILS => Lucide::ListCollapse,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_GRID => Lucide::ColumnsThree,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_GRID_ADD_COLUMN_AFTER => Lucide::BetweenVerticalEnd,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_GRID_ADD_COLUMN_BEFORE => Lucide::BetweenVerticalStart,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_GRID_DELETE => Lucide::TrashTwo,
+            // Grid delete-column intentionally omitted — see unmappedAliases().
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_H1 => Lucide::HeadingOne,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_H2 => Lucide::HeadingTwo,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_H3 => Lucide::HeadingThree,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_H4 => Lucide::HeadingFour,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_H5 => Lucide::HeadingFive,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_H6 => Lucide::HeadingSix,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_HIGHLIGHT => Lucide::Highlighter,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_HORIZONTAL_RULE => Lucide::Minus,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_ITALIC => Lucide::Italic,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_LEAD => Lucide::AArrowUp,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_LINK => Lucide::Link,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_MERGE_TAGS => Lucide::Braces,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_ORDERED_LIST => Lucide::ListOrdered,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_PARAGRAPH => Lucide::Pilcrow,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_REDO => Lucide::RedoTwo,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_SMALL => Lucide::AArrowDown,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_STRIKE => Lucide::Strikethrough,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_SUBSCRIPT => Lucide::Subscript,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_SUPERSCRIPT => Lucide::Superscript,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE => Lucide::Table,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_ADD_COLUMN_AFTER => Lucide::BetweenVerticalEnd,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_ADD_COLUMN_BEFORE => Lucide::BetweenVerticalStart,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_ADD_ROW_AFTER => Lucide::BetweenHorizontalEnd,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_ADD_ROW_BEFORE => Lucide::BetweenHorizontalStart,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_DELETE => Lucide::TrashTwo,
+            // Table delete-column and delete-row intentionally omitted — see unmappedAliases().
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_MERGE_CELLS => Lucide::TableCellsMerge,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_SPLIT_CELL => Lucide::TableCellsSplit,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_TOGGLE_HEADER_CELL => Lucide::GridTwoxTwoCheck,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_TOGGLE_HEADER_ROW => Lucide::PanelTop,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TEXT_COLOR => Lucide::SwatchBook,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_UNDERLINE => Lucide::Underline,
+            FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_UNDO => Lucide::UndoTwo,
             FormsIconAlias::COMPONENTS_SELECT_ACTIONS_CREATE_OPTION => Lucide::Plus,
             FormsIconAlias::COMPONENTS_SELECT_ACTIONS_EDIT_OPTION => Lucide::SquarePen,
             FormsIconAlias::COMPONENTS_TEXT_INPUT_ACTIONS_COPY => Lucide::ClipboardCopy,

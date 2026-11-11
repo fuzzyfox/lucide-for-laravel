@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Filament\Forms\View\FormsIconAlias;
 use Filament\Support\Facades\FilamentIcon;
 use Filament\View\PanelsIconAlias;
 use FuzzyFox\Lucide\Lucide;
@@ -56,6 +57,18 @@ it('leaves the GitHub brand button to Filament’s default as an explicit except
     expect(LucideFilamentServiceProvider::aliasOverrides())->not->toHaveKey($github)
         ->and(LucideFilamentServiceProvider::unmappedAliases())->toContain($github);
 });
+
+it('leaves the rich editor’s delete-column and delete-row tools to Filament’s own glyphs', function (string $alias): void {
+    // Lucide has no glyph for deleting a single column or row, and a generic
+    // trash can would be indistinguishable from "delete table" in the same
+    // toolbar, so Filament's purpose-drawn icons stay.
+    expect(LucideFilamentServiceProvider::aliasOverrides())->not->toHaveKey($alias)
+        ->and(LucideFilamentServiceProvider::unmappedAliases())->toContain($alias);
+})->with([
+    'table delete column' => FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_DELETE_COLUMN,
+    'table delete row' => FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_TABLE_DELETE_ROW,
+    'grid delete column' => FormsIconAlias::COMPONENTS_RICH_EDITOR_TOOLBAR_GRID_DELETE_COLUMN,
+]);
 
 it('accounts for every Filament icon alias, mapping or excepting each one', function (): void {
     $accountedFor = array_merge(

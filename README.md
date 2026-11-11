@@ -33,7 +33,7 @@ not a wait: a pinned Lucide release in, regenerated artifacts out. A daily age-g
 
 - PHP `^8.2` (8.2 – 8.5)
 - Laravel 11.28+, 12, or 13
-- Filament `^5.0` — optional, only needed for the chrome overlay
+- Filament `^5.10` — optional, only needed for the chrome overlay
 
 ## Installation
 
