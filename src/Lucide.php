@@ -385,6 +385,7 @@ enum Lucide: string
     case CandyOff = 'lucide-candy-off';
     case Cannabis = 'lucide-cannabis';
     case CannabisOff = 'lucide-cannabis-off';
+    case Cap = 'lucide-cap';
     case Captions = 'lucide-captions';
     case CaptionsOff = 'lucide-captions-off';
     case Car = 'lucide-car';
@@ -1032,6 +1033,7 @@ enum Lucide: string
     case GraduationCap = 'lucide-graduation-cap';
     case Grape = 'lucide-grape';
     case GraphHub = 'lucide-graph-hub';
+    case GraphRing = 'lucide-graph-ring';
     case GraphStar = 'lucide-graph-star';
     case Grid = 'lucide-grid';
     case GridTwoXTwo = 'lucide-grid-2-x-2';
@@ -1197,6 +1199,7 @@ enum Lucide: string
     case LayoutFreeform = 'lucide-layout-freeform';
     case LayoutGrid = 'lucide-layout-grid';
     case LayoutGridCircles = 'lucide-layout-grid-circles';
+    case LayoutGridPlus = 'lucide-layout-grid-plus';
     case LayoutList = 'lucide-layout-list';
     case LayoutPanelLeft = 'lucide-layout-panel-left';
     case LayoutPanelTop = 'lucide-layout-panel-top';
