@@ -72,6 +72,7 @@ enum Lucide: string
     case Aperture = 'lucide-aperture';
     case AppWindow = 'lucide-app-window';
     case AppWindowMac = 'lucide-app-window-mac';
+    case AppWindowPlus = 'lucide-app-window-plus';
     case Apple = 'lucide-apple';
     case Archive = 'lucide-archive';
     case ArchiveArrowDown = 'lucide-archive-arrow-down';
@@ -151,6 +152,14 @@ enum Lucide: string
     case ArrowUpWideNarrow = 'lucide-arrow-up-wide-narrow';
     case ArrowUpZA = 'lucide-arrow-up-z-a';
     case ArrowUpZa = 'lucide-arrow-up-za';
+    case ArrowsFromAxisDashedHorizontal = 'lucide-arrows-from-axis-dashed-horizontal';
+    case ArrowsFromAxisDashedVertical = 'lucide-arrows-from-axis-dashed-vertical';
+    case ArrowsFromAxisHorizontal = 'lucide-arrows-from-axis-horizontal';
+    case ArrowsFromAxisVertical = 'lucide-arrows-from-axis-vertical';
+    case ArrowsToAxisDashedHorizontal = 'lucide-arrows-to-axis-dashed-horizontal';
+    case ArrowsToAxisDashedVertical = 'lucide-arrows-to-axis-dashed-vertical';
+    case ArrowsToAxisHorizontal = 'lucide-arrows-to-axis-horizontal';
+    case ArrowsToAxisVertical = 'lucide-arrows-to-axis-vertical';
     case ArrowsUpFromLine = 'lucide-arrows-up-from-line';
     case Asterisk = 'lucide-asterisk';
     case AsteriskSquare = 'lucide-asterisk-square';
@@ -305,11 +314,16 @@ enum Lucide: string
     case BookmarkX = 'lucide-bookmark-x';
     case BoomBox = 'lucide-boom-box';
     case Bot = 'lucide-bot';
+    case BotCheck = 'lucide-bot-check';
     case BotMessageSquare = 'lucide-bot-message-square';
+    case BotMinus = 'lucide-bot-minus';
     case BotOff = 'lucide-bot-off';
+    case BotPlus = 'lucide-bot-plus';
+    case BotX = 'lucide-bot-x';
     case BottleWine = 'lucide-bottle-wine';
     case BowArrow = 'lucide-bow-arrow';
     case Box = 'lucide-box';
+    case BoxDashed = 'lucide-box-dashed';
     case BoxSelect = 'lucide-box-select';
     case Boxes = 'lucide-boxes';
     case BoxesLinked = 'lucide-boxes-linked';
@@ -394,6 +408,14 @@ enum Lucide: string
     case CarTaxiFront = 'lucide-car-taxi-front';
     case Caravan = 'lucide-caravan';
     case CardSim = 'lucide-card-sim';
+    case CaretsFromAxisDashedHorizontal = 'lucide-carets-from-axis-dashed-horizontal';
+    case CaretsFromAxisDashedVertical = 'lucide-carets-from-axis-dashed-vertical';
+    case CaretsFromAxisHorizontal = 'lucide-carets-from-axis-horizontal';
+    case CaretsFromAxisVertical = 'lucide-carets-from-axis-vertical';
+    case CaretsToAxisDashedHorizontal = 'lucide-carets-to-axis-dashed-horizontal';
+    case CaretsToAxisDashedVertical = 'lucide-carets-to-axis-dashed-vertical';
+    case CaretsToAxisHorizontal = 'lucide-carets-to-axis-horizontal';
+    case CaretsToAxisVertical = 'lucide-carets-to-axis-vertical';
     case Carrot = 'lucide-carrot';
     case Carton = 'lucide-carton';
     case CartonOff = 'lucide-carton-off';
@@ -465,16 +487,26 @@ enum Lucide: string
     case ChevronUpSquare = 'lucide-chevron-up-square';
     case ChevronsDown = 'lucide-chevrons-down';
     case ChevronsDownUp = 'lucide-chevrons-down-up';
+    case ChevronsFromAxisDashedHorizontal = 'lucide-chevrons-from-axis-dashed-horizontal';
+    case ChevronsFromAxisDashedVertical = 'lucide-chevrons-from-axis-dashed-vertical';
+    case ChevronsFromAxisHorizontal = 'lucide-chevrons-from-axis-horizontal';
+    case ChevronsFromAxisVertical = 'lucide-chevrons-from-axis-vertical';
     case ChevronsLeft = 'lucide-chevrons-left';
     case ChevronsLeftRight = 'lucide-chevrons-left-right';
     case ChevronsLeftRightEllipsis = 'lucide-chevrons-left-right-ellipsis';
     case ChevronsRight = 'lucide-chevrons-right';
     case ChevronsRightLeft = 'lucide-chevrons-right-left';
+    case ChevronsToAxisDashedHorizontal = 'lucide-chevrons-to-axis-dashed-horizontal';
+    case ChevronsToAxisDashedVertical = 'lucide-chevrons-to-axis-dashed-vertical';
+    case ChevronsToAxisHorizontal = 'lucide-chevrons-to-axis-horizontal';
+    case ChevronsToAxisVertical = 'lucide-chevrons-to-axis-vertical';
     case ChevronsUp = 'lucide-chevrons-up';
     case ChevronsUpDown = 'lucide-chevrons-up-down';
+    case ChocolateBar = 'lucide-chocolate-bar';
     case Church = 'lucide-church';
     case Cigarette = 'lucide-cigarette';
     case CigaretteOff = 'lucide-cigarette-off';
+    case Cinema = 'lucide-cinema';
     case Circle = 'lucide-circle';
     case CircleAlert = 'lucide-circle-alert';
     case CircleArrowDown = 'lucide-circle-arrow-down';
@@ -489,6 +521,7 @@ enum Lucide: string
     case CircleArrowUp = 'lucide-circle-arrow-up';
     case CircleArrowUpLeftExit = 'lucide-circle-arrow-up-left-exit';
     case CircleArrowUpRightExit = 'lucide-circle-arrow-up-right-exit';
+    case CircleBounce = 'lucide-circle-bounce';
     case CircleCheck = 'lucide-circle-check';
     case CircleCheckBig = 'lucide-circle-check-big';
     case CircleChevronDown = 'lucide-circle-chevron-down';
@@ -548,6 +581,7 @@ enum Lucide: string
     case CircleParkingOff = 'lucide-circle-parking-off';
     case CirclePause = 'lucide-circle-pause';
     case CirclePercent = 'lucide-circle-percent';
+    case CirclePersonArmsSpread = 'lucide-circle-person-arms-spread';
     case CirclePile = 'lucide-circle-pile';
     case CirclePlay = 'lucide-circle-play';
     case CirclePlus = 'lucide-circle-plus';
@@ -558,6 +592,7 @@ enum Lucide: string
     case CircleSlashTwo = 'lucide-circle-slash-2';
     case CircleSlashed = 'lucide-circle-slashed';
     case CircleSmall = 'lucide-circle-small';
+    case CircleSpeedLines = 'lucide-circle-speed-lines';
     case CircleStar = 'lucide-circle-star';
     case CircleStop = 'lucide-circle-stop';
     case CircleUser = 'lucide-circle-user';
@@ -712,6 +747,7 @@ enum Lucide: string
     case Dessert = 'lucide-dessert';
     case DiagramFlowHorizontal = 'lucide-diagram-flow-horizontal';
     case DiagramFlowVertical = 'lucide-diagram-flow-vertical';
+    case DiagramSankey = 'lucide-diagram-sankey';
     case Diameter = 'lucide-diameter';
     case Diamond = 'lucide-diamond';
     case DiamondMinus = 'lucide-diamond-minus';
@@ -736,6 +772,7 @@ enum Lucide: string
     case DnaOff = 'lucide-dna-off';
     case Dock = 'lucide-dock';
     case Dog = 'lucide-dog';
+    case Doghouse = 'lucide-doghouse';
     case DollarSign = 'lucide-dollar-sign';
     case Dome = 'lucide-dome';
     case Donut = 'lucide-donut';
@@ -945,11 +982,13 @@ enum Lucide: string
     case FolderKey = 'lucide-folder-key';
     case FolderLock = 'lucide-folder-lock';
     case FolderMinus = 'lucide-folder-minus';
+    case FolderNetwork = 'lucide-folder-network';
     case FolderOpen = 'lucide-folder-open';
     case FolderOpenDot = 'lucide-folder-open-dot';
     case FolderOutput = 'lucide-folder-output';
     case FolderPen = 'lucide-folder-pen';
     case FolderPlus = 'lucide-folder-plus';
+    case FolderPlusCorner = 'lucide-folder-plus-corner';
     case FolderRoot = 'lucide-folder-root';
     case FolderSearch = 'lucide-folder-search';
     case FolderSearchTwo = 'lucide-folder-search-2';
@@ -1033,6 +1072,7 @@ enum Lucide: string
     case GraduationCap = 'lucide-graduation-cap';
     case Grape = 'lucide-grape';
     case GraphHub = 'lucide-graph-hub';
+    case GraphPath = 'lucide-graph-path';
     case GraphRing = 'lucide-graph-ring';
     case GraphStar = 'lucide-graph-star';
     case Grid = 'lucide-grid';
@@ -1069,6 +1109,7 @@ enum Lucide: string
     case HandHelping = 'lucide-hand-helping';
     case HandMetal = 'lucide-hand-metal';
     case HandPlatter = 'lucide-hand-platter';
+    case HandTruck = 'lucide-hand-truck';
     case Handbag = 'lucide-handbag';
     case HandleBottomRight = 'lucide-handle-bottom-right';
     case Handshake = 'lucide-handshake';
@@ -1108,6 +1149,7 @@ enum Lucide: string
     case HikingStick = 'lucide-hiking-stick';
     case History = 'lucide-history';
     case HockeyStick = 'lucide-hockey-stick';
+    case Hole = 'lucide-hole';
     case Home = 'lucide-home';
     case Hop = 'lucide-hop';
     case HopOff = 'lucide-hop-off';
@@ -1117,6 +1159,8 @@ enum Lucide: string
     case Hourglass = 'lucide-hourglass';
     case HourglassCog = 'lucide-hourglass-cog';
     case House = 'lucide-house';
+    case HouseArrowLeft = 'lucide-house-arrow-left';
+    case HouseArrowRight = 'lucide-house-arrow-right';
     case HouseCog = 'lucide-house-cog';
     case HouseHeart = 'lucide-house-heart';
     case HousePlug = 'lucide-house-plug';
@@ -1152,6 +1196,7 @@ enum Lucide: string
     case IterationCcw = 'lucide-iteration-ccw';
     case IterationCw = 'lucide-iteration-cw';
     case IvBag = 'lucide-iv-bag';
+    case Jacket = 'lucide-jacket';
     case JapaneseYen = 'lucide-japanese-yen';
     case Joystick = 'lucide-joystick';
     case Kanban = 'lucide-kanban';
@@ -1483,6 +1528,7 @@ enum Lucide: string
     case Network = 'lucide-network';
     case Newspaper = 'lucide-newspaper';
     case Nfc = 'lucide-nfc';
+    case NigerianNaira = 'lucide-nigerian-naira';
     case NonBinary = 'lucide-non-binary';
     case Notebook = 'lucide-notebook';
     case NotebookDot = 'lucide-notebook-dot';
@@ -1508,6 +1554,7 @@ enum Lucide: string
     case Outdent = 'lucide-outdent';
     case Package = 'lucide-package';
     case PackageTwo = 'lucide-package-2';
+    case PackageArrowBendUpLeft = 'lucide-package-arrow-bend-up-left';
     case PackageCheck = 'lucide-package-check';
     case PackageMinus = 'lucide-package-minus';
     case PackageOpen = 'lucide-package-open';
@@ -1517,6 +1564,7 @@ enum Lucide: string
     case PackageSearch = 'lucide-package-search';
     case PackageX = 'lucide-package-x';
     case PaintBucket = 'lucide-paint-bucket';
+    case PaintGun = 'lucide-paint-gun';
     case PaintRoller = 'lucide-paint-roller';
     case Paintbrush = 'lucide-paintbrush';
     case PaintbrushTwo = 'lucide-paintbrush-2';
@@ -1682,6 +1730,7 @@ enum Lucide: string
     case RectangleEllipsis = 'lucide-rectangle-ellipsis';
     case RectangleGoggles = 'lucide-rectangle-goggles';
     case RectangleHorizontal = 'lucide-rectangle-horizontal';
+    case RectangleLandscapePlay = 'lucide-rectangle-landscape-play';
     case RectangleVertical = 'lucide-rectangle-vertical';
     case Recycle = 'lucide-recycle';
     case Redo = 'lucide-redo';
@@ -1928,6 +1977,10 @@ enum Lucide: string
     case SquareArrowUpRightEnter = 'lucide-square-arrow-up-right-enter';
     case SquareArrowUpRightExit = 'lucide-square-arrow-up-right-exit';
     case SquareAsterisk = 'lucide-square-asterisk';
+    case SquareAxisDashedHorizontal = 'lucide-square-axis-dashed-horizontal';
+    case SquareAxisDashedVertical = 'lucide-square-axis-dashed-vertical';
+    case SquareAxisHorizontal = 'lucide-square-axis-horizontal';
+    case SquareAxisVertical = 'lucide-square-axis-vertical';
     case SquareBookmark = 'lucide-square-bookmark';
     case SquareBottomDashedScissors = 'lucide-square-bottom-dashed-scissors';
     case SquareCenterlineDashedHorizontal = 'lucide-square-centerline-dashed-horizontal';
@@ -2013,6 +2066,7 @@ enum Lucide: string
     case SquarePilcrow = 'lucide-square-pilcrow';
     case SquarePlay = 'lucide-square-play';
     case SquarePlus = 'lucide-square-plus';
+    case SquarePlusCorner = 'lucide-square-plus-corner';
     case SquarePower = 'lucide-square-power';
     case SquareRadical = 'lucide-square-radical';
     case SquareRoundCorner = 'lucide-square-round-corner';
@@ -2070,6 +2124,7 @@ enum Lucide: string
     case StrokeLineJoinBevel = 'lucide-stroke-line-join-bevel';
     case StrokeLineJoinMiter = 'lucide-stroke-line-join-miter';
     case StrokeLineJoinRound = 'lucide-stroke-line-join-round';
+    case StrokeWidth = 'lucide-stroke-width';
     case Subscript = 'lucide-subscript';
     case Subtitles = 'lucide-subtitles';
     case Summary = 'lucide-summary';
@@ -2249,6 +2304,7 @@ enum Lucide: string
     case UserRound = 'lucide-user-round';
     case UserRoundArrowLeft = 'lucide-user-round-arrow-left';
     case UserRoundCheck = 'lucide-user-round-check';
+    case UserRoundClock = 'lucide-user-round-clock';
     case UserRoundCog = 'lucide-user-round-cog';
     case UserRoundExclamationPoint = 'lucide-user-round-exclamation-point';
     case UserRoundGroup = 'lucide-user-round-group';
@@ -2310,6 +2366,7 @@ enum Lucide: string
     case WandTwo = 'lucide-wand-2';
     case WandSparkles = 'lucide-wand-sparkles';
     case Warehouse = 'lucide-warehouse';
+    case WarehouseWaves = 'lucide-warehouse-waves';
     case WashingMachine = 'lucide-washing-machine';
     case Watch = 'lucide-watch';
     case Waves = 'lucide-waves';
